@@ -4082,3 +4082,170 @@ picture {
   }
 }
 
+/* ==========================================
+   BLACK.US 2026 — FAIXA PROMOCIONAL
+   ========================================== */
+
+.blackus-banner {
+  display: block;
+  width: 100%;
+  padding: 12px 20px;
+  background: #1d1d1d;
+  border-bottom: 1px solid rgba(184,153,104,.35);
+  text-decoration: none;
+  cursor: pointer;
+  position: relative;
+  z-index: 10;
+  transition: background .25s ease;
+}
+
+.blackus-banner:hover {
+  background: #292725;
+}
+
+.blackus-banner-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 22px;
+  flex-wrap: wrap;
+  max-width: 1280px;
+  margin: 0 auto;
+  text-align: center;
+  font-family: "Montserrat", Arial, sans-serif;
+  line-height: 1.45;
+}
+
+.blackus-banner-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  color: #e5c59b;
+  font-size: .75rem;
+  font-weight: 700;
+  letter-spacing: .08em;
+  white-space: nowrap;
+}
+
+.blackus-banner-dot {
+  width: 9px;
+  height: 9px;
+  flex: 0 0 9px;
+  border-radius: 50%;
+  background: #24eb11;
+  box-shadow: 0 0 10px rgba(36,235,17,.45);
+}
+
+.blackus-banner-message {
+  color: #f8f5ef;
+  font-size: .78rem;
+  font-weight: 500;
+}
+
+.blackus-banner-cta {
+  color: #b7f79b;
+  font-size: .75rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.blackus-banner-cta span {
+  display: inline-block;
+  margin-left: 4px;
+  transition: transform .25s ease;
+}
+
+.blackus-banner:hover .blackus-banner-cta span {
+  transform: translateX(4px);
+}
+
+.blackus-banner:focus-visible {
+  outline: 3px solid #b7f79b;
+  outline-offset: -3px;
+}
+
+
+/* ==========================================
+   BLACK.US — MOBILE COMPACTO
+   ========================================== */
+
+@media (max-width: 820px) {
+
+  /* Reserva somente o espaço do header fixo */
+  main {
+    padding-top: var(--mobile-header-height, 68px) !important;
+  }
+
+  /* Faixa no fluxo normal, sem sobreposição */
+  main > a.blackus-banner {
+    position: static !important;
+    display: block !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 40px;
+    margin: 0 !important;
+    padding: 9px 12px !important;
+    transform: none !important;
+    background: #1d1d1d;
+  }
+
+  .blackus-banner-content {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    flex-wrap: nowrap !important;
+    gap: 8px !important;
+    max-width: 100%;
+    line-height: 1.2;
+  }
+
+  .blackus-banner-brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    flex-shrink: 0;
+    font-size: .65rem;
+    letter-spacing: .04em;
+  }
+
+  .blackus-banner-dot {
+    width: 7px;
+    height: 7px;
+    flex-basis: 7px;
+  }
+
+  /* A mensagem longa fica apenas no desktop */
+  .blackus-banner-message {
+    display: none !important;
+  }
+
+  .blackus-banner-cta {
+    flex-shrink: 0;
+    font-size: .65rem;
+    white-space: nowrap;
+  }
+
+  /* Hero começa imediatamente após a faixa */
+  main > .blackus-banner + #inicio {
+    margin-top: 0 !important;
+  }
+}
+
+@media (max-width: 360px) {
+  .blackus-banner-brand,
+  .blackus-banner-cta {
+    font-size: .58rem;
+  }
+
+  main > a.blackus-banner {
+    padding: 9px 10px !important;
+  }
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+  .blackus-banner,
+  .blackus-banner-cta span {
+    transition: none;
+  }
+}
